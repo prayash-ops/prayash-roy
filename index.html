@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODIE | Taste the Happiness</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#" class="logo">FOOD<span>IE.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="cart-btn" id="openCart">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tagline">🔥 FRESH FOOD, FRESH MOOD</span>
+
+            <h1>
+                Delicious Food <br>
+                <span>Delivered Fast.</span>
+            </h1>
+
+            <p>
+                Enjoy delicious meals made with fresh ingredients.
+                Order your favourite food and enjoy every bite!
+            </p>
+
+            <a href="#menu" class="main-btn">Explore Menu →</a>
+
+            <div class="hero-info">
+                <div>
+                    <h3>30 Min</h3>
+                    <small>Fast Delivery</small>
+                </div>
+                <div>
+                    <h3>100%</h3>
+                    <small>Fresh Food</small>
+                </div>
+                <div>
+                    <h3>4.9 ★</h3>
+                    <small>Customer Rating</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900"
+                alt="Delicious burger">
+            <div class="floating-card">
+                <span>⭐ 4.9 Rating</span>
+                <h3>Best Burger</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="menu">
+        <div class="section-heading">
+            <span>OUR MENU</span>
+            <h2>Explore Our <span>Food</span></h2>
+            <p>Choose your favourite category</p>
+        </div>
+
+        <div class="category-list">
+            <button class="category active" data-category="All">🍽️ All</button>
+            <button class="category" data-category="Burger">🍔 Burger</button>
+            <button class="category" data-category="Pizza">🍕 Pizza</button>
+            <button class="category" data-category="Biryani">🍛 Biryani</button>
+            <button class="category" data-category="Drinks">🥤 Drinks</button>
+        </div>
+
+        <div class="menu-tools">
+            <input type="text" id="searchInput"
+                placeholder="🔍 Search your favourite food...">
+        </div>
+
+        <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div>
+            <span class="tagline">WHY CHOOSE US?</span>
+            <h2>Good Food. Good Mood.</h2>
+            <p>
+                FOODIE brings delicious food to your doorstep.
+                We focus on freshness, quality and a great
+                ordering experience.
+            </p>
+        </div>
+        <div class="about-features">
+            <div>🚀 Fast Delivery</div>
+            <div>🥗 Fresh Ingredients</div>
+            <div>❤️ Made With Love</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="logo">FOOD<span>IE.</span></a>
+        <p>© 2026 FOODIE. College Project Demo.</p>
+        <p>Made with ❤️ and JavaScript</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-box">
+            <button class="close-btn" id="closeCart">✕</button>
+
+            <h2>🛒 Your Cart</h2>
+
+            <div id="cartItems"></div>
+
+            <div class="total-row">
+                <span>Total Amount</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="main-btn full-btn" id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-box">
+            <button class="close-btn" id="closeCheckout">✕</button>
+
+            <h2>Complete Your Order</h2>
+
+            <form id="checkoutForm">
+                <label>Full Name</label>
+                <input type="text" id="customerName"
+                    placeholder="Enter your name" required>
+
+                <label>Phone Number</label>
+                <input type="tel" id="customerPhone"
+                    placeholder="Enter phone number"
+                    pattern="[0-9]{10}" required>
+
+                <label>Delivery Address</label>
+                <textarea id="customerAddress"
+                    placeholder="Enter your full address"
+                    required></textarea>
+
+                <label>Payment Method</label>
+                <select id="paymentMethod">
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Demo Online Payment">Demo Online Payment</option>
+                </select>
+
+                <button type="submit" class="main-btn full-btn">
+                    Place Order
+                </button>
+            </form>
+
+            <div id="orderSuccess" class="success-message" hidden>
+                <h2>🎉 Order Placed!</h2>
+                <p id="orderDetails"></p>
+                <button class="main-btn" id="finishOrder">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
